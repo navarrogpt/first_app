@@ -4,9 +4,7 @@ describe PagesController do
   integrate_views
   
   before(:each) do
-    #
-    # @base_title = "Pat Navarro"
-    #
+    @base_title = "Pat Navarro"
   end
 
   describe "GET 'home'" do
