@@ -2,10 +2,21 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Pat Navarro | <%= @title %></title>
+    <title><%= @title %></title>
+	<%= render 'layouts/stylesheets' %>
+	<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+    <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+	<!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
   </head>
   <body>
-    <%= yield %>
+    <div class="container">
+	  <%= render 'layouts/header' %>
+      <div id="content" class="round">
+        <%= yield %>
+      </div>
+	  <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
 
